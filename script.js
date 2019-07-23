@@ -75,7 +75,7 @@ final.forEach(e => {
         options = Array.from(e[2].matchAll(optionreg));
     }
 
-console.log(options)
+//console.log(options)
 
     if (showVariableTypes){
         output.push("    " + options[0][1] + ":" + options[0][2] + '<span class="grey"> #' + temp + "</span>")
@@ -89,6 +89,7 @@ console.log(options)
 });
 
 output = output.join('\n');
+//console.log(final.length)
 
 //alert(output)
 
@@ -96,13 +97,14 @@ output = output.join('\n');
 
 document.getElementsByClassName("demo")[0].innerHTML = spellname + ":\n" + output
 
+document.getElementsByClassName("configcount")[0].innerHTML = "Found " + final.length + " config options"
 }
 
 
-const selectElement = document.querySelector('.spelldropdown');
+/*const selectElement = document.querySelector('.spelldropdown');
 
 selectElement.addEventListener('change', (event) => {
     myFunction();
-});
+});*/
 
 //myFunction()

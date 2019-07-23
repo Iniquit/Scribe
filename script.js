@@ -98,4 +98,11 @@ document.getElementsByClassName("demo")[0].innerHTML = spellname + ":\n" + outpu
 
 }
 
+
+const selectElement = document.querySelector('.spelldropdown');
+
+selectElement.addEventListener('change', (event) => {
+    myFunction();
+});
+
 //myFunction()

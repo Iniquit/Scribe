@@ -18,7 +18,9 @@ h1{
 
  h2{
   color: #ff3366;
+  margin-bottom: 5px;
 }
+ 
 
  body{
   font-family: 'Arial', sans-serif; 
@@ -76,4 +78,10 @@ h1{
     background-color: #FEEFB3;
     border-radius: 5px;
     padding: 10px;
+  }
+
+  .aligner{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
   }

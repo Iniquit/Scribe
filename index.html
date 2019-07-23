@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="Scribe" property="og:title">
-        <meta content="An unofficial MagicSpells source parser by Iniquit" property="og:description">
+        <meta content="An unofficial MagicSpells source interpreter by Iniquit" property="og:description">
         <meta content='scribe.png' property='og:image'>
         <title>Scribe</title>
         <link rel="stylesheet" href="normalize.css">
@@ -12,9 +12,55 @@
     </head>
     <body>
         <h1>Scribe</h1>
-        <p>An unofficial MagicSpells source parser by <a href="https://github.com/Iniquit" target="_blank">Iniquit</a> for <a href="https://github.com/TheComputerGeek2/MagicSpells/tree/4.0/core/src/main/java/com/nisovin/magicspells/spells" target="_blank">MS 4.0+</a></p>
+        <p>An unofficial MagicSpells source interpreter by <a href="https://github.com/Iniquit" target="_blank">Iniquit</a> for <a href="https://github.com/TheComputerGeek2/MagicSpells/tree/4.0/core/src/main/java/com/nisovin/magicspells/spells" target="_blank">MS 4.0+</a></p>
         <p class="warn">⚠️ This utility is a work in progress. Review your config manually before requesting support.</p>
-        <h2># Source:</h2>
+        <div class="aligner">
+        <h2># Spell Source:</h2>
+         <!--<select class="spelldropdown">
+          <optgroup label="Instant">
+            <option value="BeamSpell">BeamSpell</option>
+            <option value="BlockBeamSpell">BlockBeamSpell</option>
+            <option value="CastAtMarkSpell">CastAtMarkSpell</option>
+            <option value="ConfusionSpell">ConfusionSpell</option>
+            <option value="ConjureBookSpell">ConjureBookSpell</option>
+            <option value="ConjureFireworkSpell">ConjureFireworkSpell</option>
+            <option value="ConjureSpell">ConjureSpell</option>
+            <option value="CraftSpell">CraftSpell</option>
+            <option value="DowseSpell">DowseSpell</option>
+            <option value="DummySpell">DummySpell</option>
+            <option value="EnchantSpell">EnchantSpell</option>
+            <option value="EnderchestSpell">EnderchestSpell</option>
+            <option value="FlightPathSpell">FlightPathSpell</option>
+            <option value="FoodSpell">FoodSpell</option>
+            <option value="ForcepushSpell">ForcepushSpell</option>
+            <option value="GateSpell">GateSpell</option>
+            <option value="ItemProjectileSpell">ItemProjectileSpell</option>
+            <option value="LeapSpell">LeapSpell</option>
+            <option value="MagnetSpell">MagnetSpell</option>
+            <option value="ManaSpell">ManaSpell</option>
+            <option value="MarkSpell">MarkSpell</option>
+            <option value="ParticleProjectileSpell">ParticleProjectileSpell</option>
+            <option value="PhaseSpell">PhaseSpell</option>
+            <option value="PortalSpell">PortalSpell</option>
+            <option value="ProjectileSpell">ProjectileSpell</option>
+            <option value="PurgeSpell">PurgeSpell</option>
+            <option value="RecallSpell">RecallSpell</option>
+            <option value="RepairSpell">RepairSpell</option>
+            <option value="RitualSpell">RitualSpell</option>
+            <option value="RoarSpell">RoarSpell</option>
+            <option value="SteedSpell">SteedSpell</option>
+            <option value="ThrowBlockSpell">ThrowBlockSpell</option>
+            <option value="TimeSpell">TimeSpell</option>
+            <option value="UnconjureSpell">UnconjureSpell</option>
+            <option value="VariableCastSpell">VariableCastSpell</option>
+            <option value="VelocitySpell">VelocitySpell</option>
+            <option value="WallSpell">WallSpell</option>
+        </optgroup>
+
+          <optgroup label="Targeted">
+              <option value="HealSpell" selected="selected">HealSpell</option>
+        </select>-->
+        </div>
         <!--<p><a href="https://github.com/TheComputerGeek2/MagicSpells/tree/master/src/com/nisovin/magicspells/spells">(What can I paste here?)</a></p>-->
 
         <form>
@@ -117,11 +163,10 @@ public class HealSpell extends TargetedSpell implements TargetedEntitySpell {
         </form>
         
 
-
-<h2># Config Options:</h2>
-<div style="text-align: right">
-<input type="checkbox" id="myCheck" onchange="checkShowVariableTypes()" >
-  <label for="myCheck">Include variable types</label>
+<div class="aligner">
+<h2># Default Config:</h2>
+<div><input type="checkbox" id="myCheck" onchange="checkShowVariableTypes()" >
+  <label for="myCheck">Include variable types</label></div>
   </div>
 <!--<button onclick="myFunction()">Click me</button--> 
 <pre class="demo"></pre>

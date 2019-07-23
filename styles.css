@@ -69,3 +69,11 @@ h1{
   }
 
   .grey {color: #1677af;}
+
+
+  .warn{
+  color: #9F6000;
+    background-color: #FEEFB3;
+    border-radius: 5px;
+    padding: 10px;
+  }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Scribe</title>
+        <link rel="stylesheet" href="normalize.css">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Scribe</h1>
+        <p>An unofficial MagicSpells source parser by <a href="https://github.com/Iniquit" target="_blank">Iniquit</a></p>
+        <h2># Source:</h2>
+        <!--<p><a href="https://github.com/TheComputerGeek2/MagicSpells/tree/master/src/com/nisovin/magicspells/spells">(What can I paste here?)</a></p>-->
+
+        <form>
+        <textarea class="test" onchange="myFunction()" onblur="myFunction()" onclick="myFunction()"
+          placeholder="Paste the raw source of a MagicSpells spell.java file here.">
+        </textarea>
+        </form>
+        
+
+
+<h2># Config Options:</h2>
+<div style="text-align: right">
+<input type="checkbox" id="myCheck" onchange="checkShowVariableTypes()" >
+  <label for="myCheck">Show variable types</label>
+  </div>
+<!--<button onclick="myFunction()">Click me</button--> 
+<pre class="demo"></pre>
+    </body>
+    <script type="text/javascript" src="script.js"></script>
+</html>

@@ -71,6 +71,7 @@ h1{
   }
 
   .grey {color: #1677af;}
+  .yellow {color: yellow;}
 
   .fade{color: #9e9e9e;}
 
@@ -120,3 +121,4 @@ margin-right: 10px;
 
   transform: translateY(4px);
 }
+

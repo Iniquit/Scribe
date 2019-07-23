@@ -18,13 +18,23 @@ let final = Array.from(str.matchAll(/getConfig([^("]+)\(([^\)]+)\)/g));
 
 let namereg = /class\s*(\S+)/
 let quotereg = /(["'])(?:(?=(\\?))\2.)*?\1/g
-let extendsreg = /package com\.nisovin\.magicspells\.spells(\.[a-z]+)/
-let optionreg = /"(.*)",(.*$)/g
+let supertypeReg = /package com\.nisovin\.magicspells\.spells(\.[a-z]+)/
+let extendsreg = /extends\s*(\S+)/
 
+let optionreg = /"(.*)",(.*$)/g
 let spellname = ""
 let spellextend = ""
+let extendslist = ""
 let options = []
 
+
+if ((str.match(extendsreg)) === null){
+    extendslist = ""
+}
+
+else {
+    extendslist = Array.from(str.match(extendsreg))[1];
+}
 
 
 if ((str.match(namereg)) === null){
@@ -37,12 +47,12 @@ else {
 
 
 
-if ((str.match(extendsreg)) === null){
+if ((str.match(supertypeReg)) === null){
     spellextend = ""
 }
 
 else {
-    spellextend = Array.from(str.match(extendsreg))[1];
+    spellextend = Array.from(str.match(supertypeReg))[1];
 }
 
 
@@ -54,7 +64,14 @@ let temp = ""
 //alert(final[0][3]);
 let output = []
 
-output.push('    spell-class: "' + spellextend + "." +spellname +'"');
+if (showVariableTypes){temp = ('<span class="grey"> #(inherits options from ' + extendslist + ")</span>")}
+
+
+output.push('    spell-class<span class="yellow">: "' + spellextend + "." +spellname +'"</span>' + temp);
+
+
+
+
 
 final.forEach(e => {
 
@@ -76,14 +93,14 @@ final.forEach(e => {
         options = Array.from(e[2].matchAll(optionreg));
     }
 
-//console.log(options)
+console.log(extendslist)
 
     if (showVariableTypes){
-        output.push("    " + options[0][1] + ":" + options[0][2] + '<span class="grey"> #' + temp + "</span>")
+        output.push("    " + options[0][1] + '<span class="yellow">:' + options[0][2] + '</span><span class="grey"> #' + temp + "</span>")
     }
 
     else {
-        output.push("    " + options[0][1] + ":" + options[0][2])
+        output.push("    " + options[0][1] + '<span class="yellow">:' + options[0][2] + "</span>")
     }
 
     

@@ -5,13 +5,17 @@
         <meta content="Scribe" property="og:title">
         <meta content="An unofficial MagicSpells source interpreter by Iniquit" property="og:description">
         <meta content='scribe.png' property='og:image'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         <link rel="icon" type="image/png" href="book.png">
         <title>Scribe</title>
         <link rel="stylesheet" href="normalize.css">
         <link rel="stylesheet" href="styles.css">
 
+
     </head>
     <body>
-        <h1>Scribe</h1>
+        <span class="flexer">
+        <img src="book.png" style="max-height: 50px;display: inline-block;"><h1>Scribe</h1></span>
         <p>An unofficial MagicSpells source interpreter by <a href="https://github.com/Iniquit" target="_blank">Iniquit</a> for <a href="https://github.com/TheComputerGeek2/MagicSpells/tree/4.0/core/src/main/java/com/nisovin/magicspells/spells" target="_blank">MS 4.0+</a></p>
         <p class="warn">⚠️ This utility is a work in progress. Review your config manually before requesting support.</p>
         <div class="aligner">
@@ -164,15 +168,30 @@ public class HealSpell extends TargetedSpell implements TargetedEntitySpell {
         
 
 <div class="aligner">
-<h2># Default Config:</h2>
-<div class="configcount">test</div>
-<div><input type="checkbox" id="myCheck" onchange="checkShowVariableTypes()" >
-  <label for="myCheck">Include variable types</label></div>
-  </div>
+    <h2># Default Config:</h2>
+    <div class="configcount">test</div>
+    <div>
+        <input style="cursor: pointer;" type="checkbox" id="showVariableTypes" onchange="checkShowVariableTypes()">
+        <label style="cursor: pointer;" for="showVariableTypes">Include variable types</label>
+    </div>
+    <!--<div>
+        <input type="checkbox" id="showDefaultValues" onchange="checkShowDefaultValues()">
+        <label for="showVariableTypes">Include default values</label>
+    </div>-->
+</div>
 <!--<button onclick="myFunction()">Click me</button--> 
-<pre class="demo"></pre>
+<div>
+<pre id="foo" class="demo"></pre>
+<button class="btn" data-clipboard-target="#foo" style="cursor: pointer;">Copy</button>
+</div>
+
+<div class="aligner">
+</div>
 
     </body>
     <!--<span style="color: gray">v1.01</span>-->
     <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="clipboard.min.js"></script>
+    <script type="text/javascript">new ClipboardJS('.btn');</script>
 </html>
+

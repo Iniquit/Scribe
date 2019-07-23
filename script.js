@@ -1,8 +1,9 @@
-var showVariableTypes = document.getElementById("myCheck").checked; 
+var showVariableTypes = document.getElementById("showVariableTypes").checked; 
         myFunction();
 
 function checkShowVariableTypes() {
-    showVariableTypes = document.getElementById("myCheck").checked; 
+    showVariableTypes = document.getElementById("showVariableTypes").checked; 
+    showVariableTypes = document.getElementById("showVariableTypes").checked; 
         myFunction();
 }
 

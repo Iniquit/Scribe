@@ -1,124 +1,109 @@
+html {}
 
-
-html{
-  /*background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  background-attachment: fixed;*/
+body {
+    font-family: 'Arial', sans-serif;
+    height: 100%;
+    text-rendering: optimizeLegibility;
+    padding: 20px;
+    /*background-color: #f6f7f8;*/
+    max-width: 700px;
+    margin: auto;
+    /*background-color: white;
+  border-radius: 20px;*/
 }
 
-a{
+
+a {
     text-decoration: none;
     color: #20A4F3;
 }
 
 
-h1{
-  color: #2ec4b6;
-  font-size: 2.1em;
+h1 {
+    color: #2ec4b6;
+    font-size: 2.1em;
 }
 
- h2{
-  color: #ff3366;
-  margin-bottom: 0px;
+
+h2 {
+    color: #ff3366;
+    margin-bottom: 0px;
 }
- 
-
- body{
-  font-family: 'Arial', sans-serif; 
-  height: 100%;
-
-  text-rendering: optimizeLegibility;
-  padding: 20px;
-  /*background-color: #f6f7f8;*/
-  max-width: 700px;
-  margin: auto;
-  /*background-color: white;
-  border-radius: 20px;*/
-  }
-
-  .test {max-height: 100px}
 
 
-  pre, textarea {
-    background-color: #20a4f3; 
+.grey {color: #1677af;}
+.yellow {color: yellow;}
+.fade {color: #9e9e9e;}
+
+.test {max-height: 100px}
+
+pre,
+textarea {
+    background-color: #20a4f3;
     color: white;
     margin: 10px;
     padding: 10px;
     border-radius: 5px;
     overflow: auto;
     min-height: 100px;
-
     font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  text-align: left;
- /* white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;*/
-  line-height: 1.3em;
-  -moz-tab-size: 8;
-  -o-tab-size: 8;
-  tab-size: 8;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-  resize: none;
+    text-align: left;
+    line-height: 1.3em;
+    -moz-tab-size: 8;
+    -o-tab-size: 8;
+    tab-size: 8;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    resize: none;
     width: 95%;
-  }
+}
 
-  textarea {
- 
-  }
-
-  .grey {color: #1677af;}
-  .yellow {color: yellow;}
-
-  .fade{color: #9e9e9e;}
-
-  .warn{
+.warn {
     color: #9F6000;
     background-color: #FEEFB3;
     border-radius: 5px;
     padding: 10px;
-  }
+}
 
-  .aligner{
+.aligner {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 5px;
-  }
-
-.flexer
-  {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
 }
 
-.flexer img
-  {
-margin-right: 10px;
+.flexer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flexer img {
+    margin-right: 10px;
 }
 
 .btn {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  width: 98%;
-  border-radius: 10px;
-  margin: 10px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 98%;
+    border-radius: 10px;
+    margin: 10px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
-.btn:hover {background-color: #3e8e41}
+.btn:hover {
+    background-color: #3e8e41;
+}
 
 .btn:active {
-  background-color: #3e8e41;
-
-  transform: translateY(4px);
+    background-color: #3e8e41;
+    transform: translateY(4px);
 }
-

@@ -12,9 +12,17 @@ function myFunction() {
 
 let str = document.getElementsByClassName("test")[0].value;
 
-if (str === ""){return;}
+if (str === ""){
+    document.getElementsByClassName("demo")[0].innerHTML = " ";
+    document.getElementsByClassName("configcount")[0].innerHTML = ""
+    return;
+}
 
-let final = Array.from(str.matchAll(/getConfig([^("]+)\(([^\)]+)\)/g));
+
+let configOptions = Array.from(str.matchAll(/getConfig([^("]+)\(([^\)]+)\)/g));
+let spelljavaConfigOptions = Array.from(str.matchAll(/config\.get(.*)\(path \+ "(.*?)", ([^\)]+)\)/g));
+
+
 
 let namereg = /class\s*(\S+)/
 let quotereg = /(["'])(?:(?=(\\?))\2.)*?\1/g
@@ -61,7 +69,7 @@ else {
 
 let temp = ""
 
-//alert(final[0][3]);
+//alert(configOptions[0][3]);
 let output = []
 
 if (showVariableTypes){temp = ('<span class="grey"> #(inherits options from ' + extendslist + ")</span>")}
@@ -70,20 +78,42 @@ if (showVariableTypes){temp = ('<span class="grey"> #(inherits options from ' + 
 output.push('    spell-class<span class="yellow">: "' + spellextend + "." +spellname +'"</span>' + temp);
 
 
+console.log("Spell.java options: ", spelljavaConfigOptions)
+console.log("Length of same: ", Object.keys(spelljavaConfigOptions).length)
+
+//Detect Spell.java
+if (Object.keys(spelljavaConfigOptions).length > 0){
+
+    console.log("Detected Spell.java")
+    document.getElementsByClassName("configcount")[0].innerHTML = "Detected Spell.java (" + Object.keys(spelljavaConfigOptions).length + " config options)"
+
+    spelljavaConfigOptions.forEach(e => {
+        output.push("    " + e[2])// + '<span class="yellow">: ' + e[3] + "</span>")
+    })
 
 
 
-final.forEach(e => {
 
-    if (e[1] === "String"){temp ="string"}
-    else if (e[1] === "Vector"){temp ="vector"}
-    else if (e[1] === "Int"){temp ="integer"}
-    else if (e[1] === "Float"){temp ="float"}
-    else if (e[1] === "Boolean"){temp ="boolean"}
-    else if (e[1] === "Double"){temp ="double"}
-    else if (e[1] === "StringList"){temp ="string list"}
-    else if (e[1] === "Vector"){temp ="vector"}
-    else {temp = e[1]}
+}
+
+//Proceed normally
+else{
+console.log("Did not detect Spell.java")
+document.getElementsByClassName("configcount")[0].innerHTML = "Found " + configOptions.length + " config options"
+
+configOptions.forEach(e => {
+   let configOptionAccepts = e[1]
+
+
+    if (configOptionAccepts === "String"){configOptionAccepts ="string"}
+    else if (configOptionAccepts === "Vector"){configOptionAccepts ="vector"}
+    else if (configOptionAccepts === "Int"){configOptionAccepts ="integer"}
+    else if (configOptionAccepts === "Float"){configOptionAccepts ="float"}
+    else if (configOptionAccepts === "Boolean"){configOptionAccepts ="boolean"}
+    else if (configOptionAccepts === "Double"){configOptionAccepts ="double"}
+    else if (configOptionAccepts === "StringList"){configOptionAccepts ="string list"}
+    else if (configOptionAccepts === "Vector"){configOptionAccepts ="vector"}
+    else {}
 
     if ((e[2].match(optionreg)) === null) {
         options = "No options found"
@@ -93,10 +123,10 @@ final.forEach(e => {
         options = Array.from(e[2].matchAll(optionreg));
     }
 
-console.log(extendslist)
+//console.log(extendslist)
 
     if (showVariableTypes){
-        output.push("    " + options[0][1] + '<span class="yellow">:' + options[0][2] + '</span><span class="grey"> #' + temp + "</span>")
+        output.push("    " + options[0][1] + '<span class="yellow">:' + options[0][2] + '</span><span class="grey"> #' + configOptionAccepts + "</span>")
     }
 
     else {
@@ -106,8 +136,10 @@ console.log(extendslist)
     
 });
 
+}
+
 output = output.join('\n');
-//console.log(final.length)
+//console.log(configOptions.length)
 
 //alert(output)
 
@@ -115,7 +147,7 @@ output = output.join('\n');
 
 document.getElementsByClassName("demo")[0].innerHTML = spellname + ":\n" + output
 
-document.getElementsByClassName("configcount")[0].innerHTML = "Found " + final.length + " config options"
+
 }
 
 

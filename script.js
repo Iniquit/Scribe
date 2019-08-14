@@ -8,6 +8,14 @@ function checkShowVariableTypes() {
 }
 
 
+
+function newFunction(){
+    let testvariable = document.getElementById("spelldropdown").value;
+    //let testvariable = 
+    console.log(testvariable)
+    document.getElementsByClassName("test")[0].value = testvariable
+}
+
 function myFunction() {
 
 let str = document.getElementsByClassName("test")[0].value;

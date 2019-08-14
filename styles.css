@@ -1,15 +1,29 @@
-html {}
+:root {
+  --primaryhue: #ff3366;
+  --primaryhueclicked: #d82b56;
+  --white: #FFFFFF;
+}
+
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+  background-image: url("img/bg.png");
+    background-repeat: repeat;
+}
 
 body {
-    font-family: 'Arial', sans-serif;
+
+    font-family: 'Roboto', sans-serif;
     height: 100%;
     text-rendering: optimizeLegibility;
     padding: 20px;
-    /*background-color: #f6f7f8;*/
     max-width: 700px;
     margin: auto;
-    /*background-color: white;
-  border-radius: 20px;*/
+    margin-top: 20px;
+    background-color: #FFFFFF;
+    border-radius: 20px;*/
+    -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
 
@@ -19,29 +33,33 @@ a {
 }
 
 
+a:hover {
+    text-decoration: underline;
+}
+
 h1 {
-    color: #2ec4b6;
+    color: var(--primaryhue);
     font-size: 2.1em;
 }
 
 
 h2 {
-    color: #ff3366;
+    color: var(--primaryhue);
     margin-bottom: 0px;
 }
 
 
-.grey {color: #1677af;}
-.yellow {color: yellow;}
+.grey {color: #727272;}
+.yellow {color: #ff3366;}
 .fade {color: #9e9e9e;}
-
 .test {max-height: 100px}
 
 pre,
 textarea {
-    background-color: #20a4f3;
-    color: white;
-    margin: 10px;
+    background-color: #343434;
+    color: var(--white);
+    margin-top: 5px;
+    margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
     overflow: auto;
@@ -61,10 +79,17 @@ textarea {
 }
 
 .warn {
-    color: #9F6000;
+    color: #b28e00;
     background-color: #FEEFB3;
     border-radius: 5px;
     padding: 10px;
+    text-align: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .aligner {
@@ -78,6 +103,7 @@ textarea {
     display: flex;
     flex-direction: row;
     align-items: center;
+    text-align: 
 }
 
 .flexer img {
@@ -85,25 +111,25 @@ textarea {
 }
 
 .btn {
-    background-color: #4CAF50;
+    background-color: var(--primaryhue);
     border: none;
-    color: white;
+    color: var(--white);
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     width: 98%;
     border-radius: 10px;
-    margin: 10px;
     -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
 }
 
 .btn:hover {
-    background-color: #3e8e41;
+    background-color: var(--primaryhueclicked);
 }
 
 .btn:active {
-    background-color: #3e8e41;
+    background-color: var(--primaryhueclicked);
     transform: translateY(4px);
 }

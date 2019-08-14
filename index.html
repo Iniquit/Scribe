@@ -10,20 +10,27 @@
         <meta content="An unofficial MagicSpells source interpreter by Iniquit" property="og:description">
         <meta content='scribe.png' property='og:image'>
         
-        <link rel="icon" type="image/png" href="book.png">
+        <link rel="icon" type="image/png" href="img/book.png">
         <link rel="stylesheet" href="normalize.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="styles.css">
 
 
     </head>
     <body>
         <span class="flexer">
-        <img src="book.png" style="max-height: 50px;display: inline-block;"><h1>Scribe</h1><span style="color: #c1c1c1; margin-left: 5px;">v1.02</span></span>
-        <p>An unofficial MagicSpells source interpreter by <a href="https://github.com/Iniquit" target="_blank">Iniquit</a> for <a href="https://github.com/TheComputerGeek2/MagicSpells/tree/4.0/core/src/main/java/com/nisovin/magicspells/spells" target="_blank">MS 4.0+</a></p>
+        <img src="img/book.png" style="max-height: 45px;display: inline-block;"><h1>Scribe</h1></span>
+        <p>An unofficial MagicSpells source interpreter by <a href="https://github.com/Iniquit" target="_blank">Iniquit<img src="img/ext.png" style="max-height: 12px;display: inline-block;"></a> for <a href="https://github.com/TheComputerGeek2/MagicSpells/tree/4.0/core/src/main/java/com/nisovin/magicspells/spells" target="_blank">MS 4.0+<img src="img/ext.png" style="max-height: 12px;display: inline-block;"></a></p>
+
         <p class="warn">⚠️ This utility is a work in progress. Review your config manually before requesting support.</p>
+
+
+<!--<h2>Experimental</h2>
+        <embed src="spells/ArrowSpell.java" style="width: 100%; height: 500px;">-->
+
         <div class="aligner">
-        <h2># Spell Source:</h2>
-         <!--<select class="spelldropdown">
+        <h2>Source:</h2>
+         <!--<select id="spelldropdown" onchange="newFunction()">
           <optgroup label="Instant">
             <option value="BeamSpell">BeamSpell</option>
             <option value="BlockBeamSpell">BlockBeamSpell</option>
@@ -69,6 +76,8 @@
         </select>-->
         </div>
         <!--<p><a href="https://github.com/TheComputerGeek2/MagicSpells/tree/master/src/com/nisovin/magicspells/spells">(What can I paste here?)</a></p>-->
+
+
 
         <form>
         <textarea class="test" onchange="myFunction()" onblur="myFunction()" onclick="myFunction()"
@@ -169,20 +178,21 @@ public class HealSpell extends TargetedSpell implements TargetedEntitySpell {
         </textarea>
         </form>
         
+<!--<img class="center" src="img/down.png" style="max-height: 70px;">-->
 
 <div class="aligner">
-    <h2># Default Config:</h2>
+    <h2>Default Config:</h2>
     <div class="configcount">test</div>
     <div>
         <input style="cursor: pointer;" type="checkbox" id="showVariableTypes" onchange="checkShowVariableTypes()">
-        <label style="cursor: pointer;" for="showVariableTypes">Include variable types</label>
+        <label style="cursor: pointer;" for="showVariableTypes">Include value types</label>
     </div>
     <!--<div>
         <input type="checkbox" id="showDefaultValues" onchange="checkShowDefaultValues()">
         <label for="showVariableTypes">Include default values</label>
     </div>-->
 </div>
-<!--<button onclick="myFunction()">Click me</button--> 
+
 <div>
     <pre id="foo" class="demo"></pre>
     <button class="btn" data-clipboard-target="#foo" style="cursor: pointer;">Copy</button>
@@ -190,12 +200,11 @@ public class HealSpell extends TargetedSpell implements TargetedEntitySpell {
 
 <div class="aligner">
 </div>
-
+<span style="color: #c1c1c1; margin-left: 5px;">v1.03</span>
 
 
     </body>
 
-    <!--<span style="color: gray">v1.01</span>-->
     <script type="text/javascript" src="script.js"></script>
     <script type="text/javascript" src="clipboard.min.js"></script>
     <script type="text/javascript">new ClipboardJS('.btn');</script>

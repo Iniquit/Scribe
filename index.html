@@ -7,206 +7,51 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <meta content="Scribe" property="og:title">
-        <meta content="An unofficial MagicSpells source interpreter by Iniquit" property="og:description">
-        <meta content='scribe.png' property='og:image'>
+        <meta content="A MagicSpells source interpreter by Iniquit" property="og:description">
+        <meta content='img/hat.svg' property='og:image'>
         
-        <link rel="icon" type="image/png" href="img/book.png">
-        <link rel="stylesheet" href="normalize.css">
+        <link rel="icon" type="image/svg" href="img/hat.svg">
+        <link rel="stylesheet" href="css/normalize.css">
         <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="css/styles.css">
 
 
     </head>
     <body>
-        <span class="flexer">
-        <img src="img/book.png" style="max-height: 45px;display: inline-block;"><h1>Scribe</h1></span>
-        <p>An unofficial MagicSpells source interpreter by <a href="https://github.com/Iniquit" target="_blank">Iniquit<img src="img/ext.png" style="max-height: 12px;display: inline-block;"></a> for <a href="https://github.com/TheComputerGeek2/MagicSpells/tree/4.0/core/src/main/java/com/nisovin/magicspells/spells" target="_blank">MS 4.0+<img src="img/ext.png" style="max-height: 12px;display: inline-block;"></a></p>
+        <div class="wrapper" style="flex: 5">
+            <div class="content">
+                <p><span style="font-size: 1.5em">Scribe.</span> A <a href="https://github.com/TheComputerGeek2/MagicSpells" target="_blank">MagicSpells</a> sourcecode intrepreter by <a href="https://github.com/Iniquit" target="_blank">Iniquit<img src="img/ext.png" style="max-height: 12px;display: inline-block;"></a> that reads <a href="https://github.com/TheComputerGeek2/MagicSpells/tree/4.0/core/src/main/java/com/nisovin/magicspells/spells" target="_blank">MS 4.0+<img src="img/ext.png" style="max-height: 12px;display: inline-block;"></a> spell java files using regex to generate default spell config YAML. </p>
 
-        <p class="warn">⚠️ This utility is a work in progress. Review your config manually before requesting support.</p>
+            <p class="warn">⚠️ This utility is experimental. Review your config manually before requesting support.</p>
+            <div class="aligner">
+            <h2>Source</h2><span> (Paste the raw source of a MagicSpells spell.java file into this field)</span>
+            </div>
 
+            <form>
+            <textarea class="test" onchange="doMainLoop()" onblur="doMainLoop()" onclick="doMainLoop()"
+              placeholder="Paste the raw source of a MagicSpells spell.java file here.">
+            
+            </textarea>
+            </form>
 
-<!--<h2>Experimental</h2>
-        <embed src="spells/ArrowSpell.java" style="width: 100%; height: 500px;">-->
+                <h2>Result </h2><span class="configcount">test</span>
 
-        <div class="aligner">
-        <h2>Source:</h2>
-         <!--<select id="spelldropdown" onchange="newFunction()">
-          <optgroup label="Instant">
-            <option value="BeamSpell">BeamSpell</option>
-            <option value="BlockBeamSpell">BlockBeamSpell</option>
-            <option value="CastAtMarkSpell">CastAtMarkSpell</option>
-            <option value="ConfusionSpell">ConfusionSpell</option>
-            <option value="ConjureBookSpell">ConjureBookSpell</option>
-            <option value="ConjureFireworkSpell">ConjureFireworkSpell</option>
-            <option value="ConjureSpell">ConjureSpell</option>
-            <option value="CraftSpell">CraftSpell</option>
-            <option value="DowseSpell">DowseSpell</option>
-            <option value="DummySpell">DummySpell</option>
-            <option value="EnchantSpell">EnchantSpell</option>
-            <option value="EnderchestSpell">EnderchestSpell</option>
-            <option value="FlightPathSpell">FlightPathSpell</option>
-            <option value="FoodSpell">FoodSpell</option>
-            <option value="ForcepushSpell">ForcepushSpell</option>
-            <option value="GateSpell">GateSpell</option>
-            <option value="ItemProjectileSpell">ItemProjectileSpell</option>
-            <option value="LeapSpell">LeapSpell</option>
-            <option value="MagnetSpell">MagnetSpell</option>
-            <option value="ManaSpell">ManaSpell</option>
-            <option value="MarkSpell">MarkSpell</option>
-            <option value="ParticleProjectileSpell">ParticleProjectileSpell</option>
-            <option value="PhaseSpell">PhaseSpell</option>
-            <option value="PortalSpell">PortalSpell</option>
-            <option value="ProjectileSpell">ProjectileSpell</option>
-            <option value="PurgeSpell">PurgeSpell</option>
-            <option value="RecallSpell">RecallSpell</option>
-            <option value="RepairSpell">RepairSpell</option>
-            <option value="RitualSpell">RitualSpell</option>
-            <option value="RoarSpell">RoarSpell</option>
-            <option value="SteedSpell">SteedSpell</option>
-            <option value="ThrowBlockSpell">ThrowBlockSpell</option>
-            <option value="TimeSpell">TimeSpell</option>
-            <option value="UnconjureSpell">UnconjureSpell</option>
-            <option value="VariableCastSpell">VariableCastSpell</option>
-            <option value="VelocitySpell">VelocitySpell</option>
-            <option value="WallSpell">WallSpell</option>
-        </optgroup>
+            <div>
+                <pre id="output" class="output"></pre>
+                <button class="btn" data-clipboard-target="#output" style="cursor: pointer; font-size: 1.2em;">Copy</button>
+            </div>
 
-          <optgroup label="Targeted">
-              <option value="HealSpell" selected="selected">HealSpell</option>
-        </select>-->
+            <div>
+            <h2>Options:</h2><br>
+                    <input style="cursor: pointer;" type="checkbox" id="optionShowValueTypes" onchange="doMainLoop()">
+                    <label style="cursor: pointer;" for="optionShowValueTypes">Include the expected value types of config options</label>
+            </div>
         </div>
-        <!--<p><a href="https://github.com/TheComputerGeek2/MagicSpells/tree/master/src/com/nisovin/magicspells/spells">(What can I paste here?)</a></p>-->
-
-
-
-        <form>
-        <textarea class="test" onchange="myFunction()" onblur="myFunction()" onclick="myFunction()"
-          placeholder="Paste the raw source of a MagicSpells spell.java file here.">package com.nisovin.magicspells.spells.targeted;
-
-import org.bukkit.entity.Player;
-import org.bukkit.entity.LivingEntity;
-import org.bukkit.event.entity.EntityRegainHealthEvent.RegainReason;
-
-import com.nisovin.magicspells.util.Util;
-import com.nisovin.magicspells.util.TargetInfo;
-import com.nisovin.magicspells.util.MagicConfig;
-import com.nisovin.magicspells.spells.TargetedSpell;
-import com.nisovin.magicspells.util.compat.EventUtil;
-import com.nisovin.magicspells.spells.TargetedEntitySpell;
-import com.nisovin.magicspells.spelleffects.EffectPosition;
-import com.nisovin.magicspells.events.MagicSpellsEntityRegainHealthEvent;
-
-public class HealSpell extends TargetedSpell implements TargetedEntitySpell {
-    
-    private double healAmount;
-
-    private boolean checkPlugins;
-    private boolean cancelIfFull;
-
-    private String strMaxHealth;
-
-    private ValidTargetChecker checker;
-
-    public HealSpell(MagicConfig config, String spellName) {
-        super(config, spellName);
-        
-        healAmount = getConfigFloat("heal-amount", 10);
-
-        checkPlugins = getConfigBoolean("check-plugins", true);
-        cancelIfFull = getConfigBoolean("cancel-if-full", true);
-
-        strMaxHealth = getConfigString("str-max-health", "%t is already at max health.");
-
-        checker = (LivingEntity entity) -> entity.getHealth() < Util.getMaxHealth(entity);
-    }
-
-    @Override
-    public PostCastAction castSpell(Player player, SpellCastState state, float power, String[] args) {
-        if (state == SpellCastState.NORMAL) {
-            TargetInfo<LivingEntity> targetInfo = getTargetedEntity(player, power, checker);
-            if (targetInfo == null) return noTarget(player);
-            LivingEntity target = targetInfo.getTarget();
-            power = targetInfo.getPower();
-            if (cancelIfFull && target.getHealth() == Util.getMaxHealth(target)) return noTarget(player, formatMessage(strMaxHealth, "%t", getTargetName(target)));
-            boolean healed = heal(player, target, power);
-            if (!healed) return noTarget(player);
-            sendMessages(player, target);
-            return PostCastAction.NO_MESSAGES;
-        }
-        return PostCastAction.HANDLE_NORMALLY;
-    }
-
-    @Override
-    public boolean castAtEntity(Player caster, LivingEntity target, float power) {
-        if (validTargetList.canTarget(caster, target) && target.getHealth() < Util.getMaxHealth(target)) return heal(caster, target, power);
-        return false;
-    }
-
-    @Override
-    public boolean castAtEntity(LivingEntity target, float power) {
-        if (validTargetList.canTarget(target) && target.getHealth() < Util.getMaxHealth(target)) return heal(null, target, power);
-        return false;
-    }
-
-    @Override
-    public ValidTargetChecker getValidTargetChecker() {
-        return checker;
-    }
-    
-    private boolean heal(Player player, LivingEntity target, float power) {
-        double health = target.getHealth();
-        double amt = healAmount * power;
-
-        if (checkPlugins) {
-            MagicSpellsEntityRegainHealthEvent evt = new MagicSpellsEntityRegainHealthEvent(target, amt, RegainReason.CUSTOM);
-            EventUtil.call(evt);
-            if (evt.isCancelled()) return false;
-            amt = evt.getAmount();
-        }
-
-        health += amt;
-        if (health > Util.getMaxHealth(target)) health = Util.getMaxHealth(target);
-        target.setHealth(health);
-
-        if (player == null) playSpellEffects(EffectPosition.TARGET, target);
-        else playSpellEffects(player, target);
-        return true;
-    }
-
-}
-
-        </textarea>
-        </form>
-        
-<!--<img class="center" src="img/down.png" style="max-height: 70px;">-->
-
-<div class="aligner">
-    <h2>Default Config:</h2>
-    <div class="configcount">test</div>
-    <div>
-        <input style="cursor: pointer;" type="checkbox" id="showVariableTypes" onchange="checkShowVariableTypes()">
-        <label style="cursor: pointer;" for="showVariableTypes">Include value types</label>
     </div>
-    <!--<div>
-        <input type="checkbox" id="showDefaultValues" onchange="checkShowDefaultValues()">
-        <label for="showVariableTypes">Include default values</label>
-    </div>-->
-</div>
+</body>
 
-<div>
-    <pre id="foo" class="demo"></pre>
-    <button class="btn" data-clipboard-target="#foo" style="cursor: pointer;">Copy</button>
-</div>
-
-<div class="aligner">
-</div>
-<span style="color: #c1c1c1; margin-left: 5px;">v1.03</span>
-
-
-    </body>
-
-    <script type="text/javascript" src="script.js"></script>
-    <script type="text/javascript" src="clipboard.min.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+    <script type="text/javascript" src="js/clipboard.min.js"></script>
     <script type="text/javascript">new ClipboardJS('.btn');</script>
 </html>
 

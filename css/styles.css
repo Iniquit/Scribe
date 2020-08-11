@@ -1,0 +1,207 @@
+:root {
+  --primaryhue: #ff3852;
+  --primaryhueclicked: #e03e54;
+  --white: #fff;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-image: url("./img/bg.png");
+    background-repeat: repeat;
+     color: #333;
+ }
+
+
+body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+@media (min-width: 780px){ 
+body{display: flex;
+  }
+
+.sidebar{
+  max-width: 220px; 
+  margin-right: 40px;
+  overflow-y: auto;
+}
+}
+
+.content{
+  max-width: 800px;
+  margin: auto;
+  border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.hat-header{
+background: var(--primaryhue);
+border-radius: 50%;
+height: 150px;
+width: 150px;
+margin: auto;
+background-image: url("img/hat.svg");
+background-repeat: no-repeat;
+background-position: center -3px;
+background-size: 95%;
+
+}
+
+hr {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 1em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-width: 1.5px;
+    border-radius: 1em;
+    color: #cdcdcd;
+}
+
+.sidebar, .content{
+    font-family: 'Roboto', sans-serif;
+    text-rendering: optimizeLegibility;
+    padding: 30px;
+    background-color: #FFFFFF;
+    /*border-radius: 20px 20px 20px 20px;*/
+  
+    
+}
+
+
+/*Color of the menu sidebar items*/
+li a:link{
+padding:5px;
+margin: 8px;
+background: #e8e8e8;
+text-align: center;
+display: block;
+text-decoration-style: none;
+border-radius: 15px;
+margin-left: auto;
+margin-right: auto;
+
+}
+
+ul{
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+li a:hover{
+background:var(--primaryhue);
+color: white;
+text-decoration-style: none;
+transition: 0.1s ease;
+box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);}
+
+li a:link{
+  border-radius: 15px;
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  display: block;
+}
+
+.sidebar h2{
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+
+a {text-decoration: none; color: #20A4F3;}
+a:hover {text-decoration: underline;}
+
+li a{color: #333}
+li a:hover {text-decoration: none;}
+
+
+h1 {
+    color: var(--primaryhue);
+    font-size: 2.1em;
+}
+
+
+h2 {
+    color: var(--primaryhue);
+    margin-bottom: 0px;
+    display: inline;
+}
+
+
+.grey {color: #727272;}
+.yellow {color: var(--primaryhue);}
+.fade {color: #9e9e9e;}
+.test {max-height: 100px}
+
+pre, textarea {
+    background-color: #343434;
+    color: var(--white);
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: auto;
+    min-height: 100px;
+    font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    text-align: left;
+    line-height: 1.2em;
+    -moz-tab-size: 8;
+    -o-tab-size: 8;
+    tab-size: 8;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    resize: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.warn {
+    color: #b28e00;
+    background-color: #FEEFB3;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+.btn {
+    background-color: var(--primaryhue);
+    border: none;
+    color: var(--white);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 0px 0px 10px 10px;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    margin-top: -14px;
+    width: 100%;
+}
+
+.btn:hover {
+    background-color: var(--primaryhueclicked);
+}
+
+.btn:active {
+    background-color: var(--primaryhueclicked);
+    transform: translateY(4px);
+}
